@@ -1,0 +1,21 @@
+<form method="POST" class="loginForm">
+  <div class="user-input">
+    <label for="username">Username</label>
+    <input
+      [(ngModel)]="userObj.username"
+      name="username"
+      id="username"
+      type="text"
+    />
+  </div>
+  <div class="user-input">
+    <label for="password">Password</label>
+    <input
+      [(ngModel)]="userObj.password"
+      name="password"
+      id="password"
+      type="password"
+    />
+  </div>
+  <button type="button" (click)="onLogin()">Login</button>
+</form>

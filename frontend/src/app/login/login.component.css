@@ -1,0 +1,26 @@
+.loginForm {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid lightblue;
+  gap: 24px;
+  padding: 24px;
+  align-items: center;
+}
+label,
+input {
+  padding: 5px;
+}
+.user-input {
+  display: flex;
+  justify-content: space-between;
+  width: 285px;
+}
+
+button {
+  padding: 5px 24px;
+  width: fit-content;
+  border-width: 1px;
+  border-radius: 3px;
+}
