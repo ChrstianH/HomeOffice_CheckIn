@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IUser } from '../interfaces/IUser';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -19,10 +19,14 @@ export class LoginComponent {
 
   onLogin() {
     console.log("Here's the login func");
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     this.http
-      .post('http://localhost:8080/usrLogin', this.userObj)
+      .post('http://localhost:8080/usrLogin', JSON.stringify(this.userObj), {
+        headers: headers,
+      })
       .subscribe((res: any) => {
         if (res.result) {
+          localStorage.setItem('ho_check_user', JSON.stringify(res.user));
           alert('Login successful');
         } else {
           alert(res.message);
